@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "title": "Welcome to Wire",
+      "link": "#",
+      "description": "The RSS feed will be populated automatically by GitHub Actions. The feed updates twice daily at 6 AM and 6 PM UTC.",
+      "pubDate": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "lastUpdated": "2024-01-01T00:00:00Z"
+}
