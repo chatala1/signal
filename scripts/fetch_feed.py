@@ -82,7 +82,7 @@ def main():
 
     out = {
         "source": feed_title,
-        "fetched_at": datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z",
+        "fetched_at": datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
         "items": items
     }
 
