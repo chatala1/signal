@@ -43,7 +43,7 @@ This will fetch the latest CISA cybersecurity advisories from https://feeder.co/
 ## Automatic Updates
 
 Once set up, the site will automatically:
-- Update the RSS feed twice daily at 6 AM and 6 PM UTC using scripts/fetch_feed.py
+- Update the RSS feed twice daily at 6 AM and 6 PM UTC using `scripts/fetch_feed.py`
 - Fetch feed data from https://feeder.co/discover/18fedcbe1e/cisa-gov
 - Commit the new feed-data.json to the repository
 - Display the 9 most recent CISA cybersecurity advisories
