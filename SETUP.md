@@ -1,6 +1,6 @@
 # GitHub Pages Setup Guide
 
-This guide will help you enable GitHub Pages for the Wire project.
+This guide will help you enable GitHub Pages for the Wire project and configure the multi-feed updater.
 
 ## Step 1: Enable GitHub Pages
 
@@ -29,9 +29,9 @@ Your site will be available at:
 https://chatala1.github.io/wire/
 ```
 
-## Step 4: Trigger the RSS Feed Update
+## Step 4: Trigger the Feed Update
 
-The RSS feed updates automatically twice daily (6 AM and 6 PM UTC), but you can trigger it manually for the first time:
+The feed updates automatically twice daily (6 AM and 6 PM UTC), but you can trigger it manually for the first time:
 
 1. Go to the **Actions** tab
 2. Click on "Update RSS Feed" in the left sidebar
@@ -57,8 +57,17 @@ Once set up, the site will automatically:
 
 ### Feed Not Updating
 - Check the Actions tab for any failed workflows
+- Review workflow logs to identify which feed(s) failed to fetch
+- Verify that feed URLs are accessible and valid RSS/Atom feeds
 - Manually trigger the "Update RSS Feed" workflow
-- Verify that the workflow has write permissions (Settings > Actions > General > Workflow permissions should be set to "Read and write permissions")
+- Verify that the workflow has write permissions (see below)
+
+### Feed URL Issues
+If a feed fails to parse:
+- Verify the URL is a direct RSS/Atom feed, not an HTML page
+- Check if the feed requires authentication or special headers
+- For Feeder discovery pages, try to find the raw RSS export URL
+- Test the URL locally using the fetch_feed.py script
 
 ### Workflow Permission Issues
 If the workflow fails with permission errors:
@@ -67,6 +76,13 @@ If the workflow fails with permission errors:
 3. Select "Read and write permissions"
 4. Check "Allow GitHub Actions to create and approve pull requests"
 5. Click Save
+
+### Script Errors
+If the Python script fails:
+- Check that all dependencies are installed (feedparser, requests, beautifulsoup4)
+- Verify Python version is 3.6+ (GitHub Actions uses 3.x by default)
+- Review the workflow logs for specific error messages
+- Test locally to debug issues
 
 ## Custom Domain (Optional)
 
