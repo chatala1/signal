@@ -1,6 +1,6 @@
-# Wire - Hacker News Feed Reader
+# Wire - CISA Cybersecurity Advisories Feed
 
-A dark-themed GitHub Pages site that displays the 9 most recent items from Hacker News front page in a 3-wide grid layout.
+A dark-themed GitHub Pages site that displays the 9 most recent CISA cybersecurity advisories in a 3-wide grid layout.
 
 ## Features
 
@@ -8,7 +8,7 @@ A dark-themed GitHub Pages site that displays the 9 most recent items from Hacke
 - **Responsive Grid Layout**: 3-column grid on desktop, adapts to 2 columns on tablets and 1 column on mobile
 - **Auto-Updates**: RSS feed is automatically fetched and updated twice daily (6 AM and 6 PM UTC)
 - **Navigation Bar**: Simple navigation with title on the left and section links on the right
-- **RSS Integration**: Displays the 9 most recent items from https://hnrss.org/frontpage
+- **RSS Integration**: Displays the 9 most recent items from https://www.cisa.gov/cybersecurity-advisories/all.xml
 
 ## Setup
 
