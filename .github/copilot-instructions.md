@@ -80,7 +80,8 @@ When working on issues:
 
 ## Resources
 
-- README.md: Project overview and setup instructions
+- README.md: Project name and basic information
+- AGENTS.md: Detailed context and guidelines for AI agents
 - LICENSE: Project license information
 
 ---

@@ -13,7 +13,7 @@ wire/
 │   └── copilot-instructions.md  # Copilot instructions
 ├── AGENTS.md            # This file - AI agent context
 ├── LICENSE              # Project license (MIT)
-└── README.md            # Project documentation
+└── README.md            # Project name and basic info
 ```
 
 ## Technology Stack
