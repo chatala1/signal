@@ -22,7 +22,7 @@ jobs:
 
       - name: Fetch RSS Feed
         run: |
-          if ! curl -f -s --max-time 30 https://hnrss.org/frontpage > rss-feed.xml; then
+          if ! curl -f -s --max-time 30 https://www.cisa.gov/cybersecurity-advisories/all.xml > rss-feed.xml; then
             echo "Error: Failed to fetch RSS feed"
             exit 1
           fi
