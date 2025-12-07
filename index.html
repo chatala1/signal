@@ -326,7 +326,10 @@
                         titleLink.href = latestItem.link;
                         titleLink.target = '_blank';
                         titleLink.rel = 'noopener noreferrer';
-                        titleLink.textContent = latestItem.title || 'Untitled';
+                        // Clean title by removing common prefixes
+                        let cleanTitle = latestItem.title || 'Untitled';
+                        cleanTitle = cleanTitle.replace(/^(Latest CyberWire News:\s*|CyberWire:\s*|The CyberWire:\s*)/i, '');
+                        titleLink.textContent = cleanTitle;
                         titleLink.style.color = '#ffffff';
                         titleLink.style.textDecoration = 'none';
                         titleLink.style.transition = 'color 0.3s';
