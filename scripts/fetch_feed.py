@@ -82,7 +82,12 @@ def get_bozo_error_message(feed):
 def check_feed_validity(feed, context=''):
     """Check if feed is valid and print appropriate messages.
     
-    Returns True if feed has entries, False otherwise.
+    Args:
+        feed (feedparser.FeedParserDict): Parsed feed object from feedparser
+        context (str): Optional context string to append to error messages (e.g., ' with .rss')
+    
+    Returns:
+        bool: True if feed has entries, False otherwise
     """
     if feed.entries:
         return True
