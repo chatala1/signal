@@ -222,6 +222,54 @@
             line-height: 1.6;
         }
 
+        /* Threat Level LED Indicator */
+        .threat-level-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .led-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
+        }
+
+        .led-low {
+            background-color: #73ae57;
+            box-shadow: 0 0 15px rgba(115, 174, 87, 0.7);
+        }
+
+        .led-guarded {
+            background-color: #00a8e1;
+            box-shadow: 0 0 15px rgba(0, 168, 225, 0.7);
+        }
+
+        .led-elevated {
+            background-color: #ecde29;
+            box-shadow: 0 0 15px rgba(236, 222, 41, 0.7);
+        }
+
+        .led-high {
+            background-color: #f37043;
+            box-shadow: 0 0 15px rgba(243, 112, 67, 0.7);
+        }
+
+        .led-severe {
+            background-color: #cc092f;
+            box-shadow: 0 0 15px rgba(204, 9, 47, 0.7);
+        }
+
+        .threat-level-text {
+            font-size: 0.9rem;
+            color: #888888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* Footer */
         footer {
             background-color: rgba(0,0,0,0.90);
@@ -297,10 +345,10 @@
 
     <div class="container">
         <div class="top-row">
-            <div class="top-container">
-                <div class="top-container-title">Title Placeholder</div>
-                <div class="top-container-subtitle">Subtitle Placeholder</div>
-                <div class="top-container-description">Description placeholder text goes here. This section can contain additional information about the content or feature.</div>
+            <div class="top-container" id="threat-level-box">
+                <div class="top-container-title">Threat Level</div>
+                <div class="top-container-subtitle">Loading...</div>
+                <div class="top-container-description">Current threat level information is being retrieved...</div>
             </div>
             <div class="top-container" id="cyberwire-box">
                 <div class="top-container-title">Title Placeholder</div>
@@ -507,6 +555,118 @@
                         
                         const descElement = upguardBox.querySelector('.top-container-description');
                         descElement.textContent = 'The UpGuard breach report feed is currently unavailable. Please check back later for the latest data breach intelligence.';
+                    }
+                }
+
+                // Populate Threat Level box (1st box in top row)
+                const cisFeed = feeds.find(feed => feed.id === 'cis-security');
+                const threatLevelBox = document.getElementById('threat-level-box');
+                
+                if (cisFeed && cisFeed.items && cisFeed.items.length > 0) {
+                    const latestItem = cisFeed.items[0];
+                    
+                    if (threatLevelBox) {
+                        // Extract threat level from title or description
+                        let threatLevel = 'UNKNOWN';
+                        let ledClass = '';
+                        
+                        // Check title and description for threat level keywords
+                        const text = (latestItem.title + ' ' + latestItem.summary).toUpperCase();
+                        
+                        if (text.includes('SEVERE') || text.includes('RED')) {
+                            threatLevel = 'SEVERE';
+                            ledClass = 'led-severe';
+                        } else if (text.includes('HIGH') || text.includes('ORANGE')) {
+                            threatLevel = 'HIGH';
+                            ledClass = 'led-high';
+                        } else if (text.includes('ELEVATED') || text.includes('YELLOW')) {
+                            threatLevel = 'ELEVATED';
+                            ledClass = 'led-elevated';
+                        } else if (text.includes('GUARDED') || text.includes('BLUE')) {
+                            threatLevel = 'GUARDED';
+                            ledClass = 'led-guarded';
+                        } else if (text.includes('LOW') || text.includes('GREEN')) {
+                            threatLevel = 'LOW';
+                            ledClass = 'led-low';
+                        }
+                        
+                        // Update title
+                        const titleElement = threatLevelBox.querySelector('.top-container-title');
+                        titleElement.textContent = `Current Threat Level: ${threatLevel}`;
+                        
+                        // Create LED indicator and subtitle
+                        const subtitleElement = threatLevelBox.querySelector('.top-container-subtitle');
+                        subtitleElement.innerHTML = '';
+                        
+                        const indicatorDiv = document.createElement('div');
+                        indicatorDiv.className = 'threat-level-indicator';
+                        
+                        const led = document.createElement('div');
+                        led.className = `led-indicator ${ledClass}`;
+                        
+                        const levelText = document.createElement('span');
+                        levelText.className = 'threat-level-text';
+                        
+                        // Format date
+                        let dateString = 'CIS Security';
+                        const dateValue = latestItem.published || latestItem.pubDate;
+                        if (dateValue) {
+                            try {
+                                const pubDate = new Date(dateValue);
+                                if (!isNaN(pubDate.getTime())) {
+                                    dateString = `CIS Security - ${pubDate.toLocaleDateString('en-US', { 
+                                        month: 'short', 
+                                        day: 'numeric', 
+                                        year: 'numeric'
+                                    })}`;
+                                }
+                            } catch (e) {
+                                console.warn('Failed to parse date for CIS Security:', e);
+                            }
+                        }
+                        levelText.textContent = dateString;
+                        
+                        indicatorDiv.appendChild(led);
+                        indicatorDiv.appendChild(levelText);
+                        subtitleElement.appendChild(indicatorDiv);
+                        
+                        // Set description with truncated summary
+                        const descElement = threatLevelBox.querySelector('.top-container-description');
+                        let textContent = '';
+                        const descValue = latestItem.summary || latestItem.description;
+                        if (descValue) {
+                            try {
+                                const parser = new DOMParser();
+                                const doc = parser.parseFromString(descValue, 'text/html');
+                                textContent = doc.body.textContent || doc.body.innerText || '';
+                            } catch (e) {
+                                textContent = descValue;
+                            }
+                        }
+                        textContent = textContent.trim();
+                        const truncated = textContent.substring(0, 200);
+                        descElement.textContent = truncated + (textContent.length > 200 ? '...' : '');
+                        
+                        // Make the entire box clickable if there's a link
+                        if (latestItem.link) {
+                            threatLevelBox.style.cursor = 'pointer';
+                            threatLevelBox.onclick = function() {
+                                window.open(latestItem.link, '_blank', 'noopener,noreferrer');
+                            };
+                        }
+                    }
+                } else {
+                    // Show message when CIS Security feed is not available
+                    if (threatLevelBox) {
+                        console.warn('CIS Security feed not available in feed data');
+                        const titleElement = threatLevelBox.querySelector('.top-container-title');
+                        titleElement.textContent = 'Current Threat Level';
+                        
+                        const subtitleElement = threatLevelBox.querySelector('.top-container-subtitle');
+                        subtitleElement.textContent = 'CIS Security';
+                        
+                        const descElement = threatLevelBox.querySelector('.top-container-description');
+                        descElement.textContent = 'The CIS Security threat level feed is currently unavailable. Please check back later for the latest threat information.';
                     }
                 }
 
