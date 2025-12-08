@@ -99,9 +99,17 @@ def check_feed_validity(feed, context=''):
     Returns:
         bool: True if feed has entries, False otherwise
     """
+    # Check if feed has entries - this is the primary indicator of success
+    # feedparser can often extract entries even from malformed XML
     if feed.entries:
+        # Warn about bozo errors but still return True if we have entries
+        bozo_msg = get_bozo_error_message(feed)
+        if bozo_msg:
+            print(f"  ⚠ Feed has parsing warnings{context}: {bozo_msg}")
+            print(f"  ✓ But still extracted {len(feed.entries)} entries")
         return True
     
+    # No entries found - check if there was a parsing error
     bozo_msg = get_bozo_error_message(feed)
     if bozo_msg:
         print(f"  ⚠ Feed parsing had errors{context}: {bozo_msg}")
@@ -291,7 +299,11 @@ def main():
     # Create session for requests
     session = requests.Session()
     session.headers.update({
-        'User-Agent': 'Mozilla/5.0 (compatible; FeedFetcher/1.0)'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'application/rss+xml, application/atom+xml, application/xml, text/xml, text/html, */*',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate',
+        'Connection': 'keep-alive'
     })
     
     feeds_data = []
