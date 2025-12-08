@@ -125,13 +125,6 @@
             margin-bottom: 0.5rem;
         }
 
-        .widget-description {
-            color: #cccccc;
-            font-size: 0.95rem;
-            flex-grow: 1;
-            margin-bottom: 1rem;
-        }
-
         .widget-link {
             color: #22c55e;
             text-decoration: none;
@@ -353,30 +346,6 @@
                         }
                         meta.textContent = dateString;
 
-                        const description = document.createElement('div');
-                        description.className = 'widget-description';
-                        // Safely extract and sanitize text from description/summary
-                        let textContent = '';
-                        const descValue = item.summary || item.description;
-                        if (descValue) {
-                            try {
-                                // Use DOMParser to safely parse HTML and extract text content
-                                const parser = new DOMParser();
-                                const doc = parser.parseFromString(descValue, 'text/html');
-                                // Get text content, which automatically strips HTML tags and scripts
-                                textContent = doc.body.textContent || doc.body.innerText || '';
-                            } catch (e) {
-                                // Fallback: use the raw description if parsing fails
-                                console.warn('Failed to parse description:', e);
-                                textContent = descValue;
-                            }
-                        }
-                        // Trim whitespace and truncate
-                        textContent = textContent.trim();
-                        const truncated = textContent.substring(0, 150);
-                        // Use textContent (not innerHTML) to prevent XSS
-                        description.textContent = truncated + (textContent.length > 150 ? '...' : '');
-
                         const link = document.createElement('a');
                         link.className = 'widget-link';
                         link.href = item.link;
@@ -386,7 +355,6 @@
 
                     widget.appendChild(title);
                     widget.appendChild(meta);
-                    widget.appendChild(description);
                     widget.appendChild(link);
                     grid.appendChild(widget);
                 });
