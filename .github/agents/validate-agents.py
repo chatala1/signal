@@ -54,6 +54,12 @@ def validate_yaml_file(filepath):
     version_parts = version.split('.')
     if len(version_parts) != 3:
         print(f"  ⚠️  Warning: version should follow semantic versioning (major.minor.patch)")
+    else:
+        # Validate that each part is a valid integer
+        for i, part in enumerate(version_parts):
+            if not part.isdigit():
+                print(f"  ⚠️  Warning: version part {i} ('{part}') should be a number")
+                break
     
     # Validate optional fields if present
     if 'languages' in config and not isinstance(config['languages'], list):
@@ -142,7 +148,6 @@ def main():
     
     # Find and validate all YAML agent configurations
     yaml_files = list(script_dir.glob("*.yml")) + list(script_dir.glob("*.yaml"))
-    yaml_files = [f for f in yaml_files if f.name != 'validate-agents.yml']
     
     if not yaml_files:
         print("⚠️  No agent configuration files found (.yml or .yaml)")
