@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "agents": [
+    {
+      "id": "coding-agent",
+      "name": "Coding Agent",
+      "description": "Specialized agent for code development, testing, and maintenance",
+      "version": "1.0.0",
+      "config_file": "coding-agent.yml",
+      "capabilities": [
+        "code_writing",
+        "code_review",
+        "debugging",
+        "testing",
+        "refactoring",
+        "documentation"
+      ],
+      "languages": [
+        "Python",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "YAML",
+        "Markdown",
+        "Bash"
+      ],
+      "tags": [
+        "development",
+        "testing",
+        "code-quality",
+        "security"
+      ],
+      "active": true
+    }
+  ],
+  "metadata": {
+    "repository": "chatala1/wire",
+    "last_updated": "2025-12-08",
+    "agent_count": 1
+  }
+}
