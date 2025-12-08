@@ -43,6 +43,10 @@ def clean_html(html_content):
         return html_content
 
 
+# Constants for feed identification
+CIS_SECURITY_DISCOVERY_ID = '769cf44983'
+
+
 def generate_feed_id(url):
     """Generate a simple ID from feed URL."""
     parsed = urlparse(url)
@@ -59,7 +63,7 @@ def generate_feed_id(url):
         if match:
             disc_id = match.group(1)
             # Special handling for CIS Security feed
-            if disc_id == '769cf44983':
+            if disc_id == CIS_SECURITY_DISCOVERY_ID:
                 return 'cis-security'
             return f'feeder-co-discover-{disc_id[:12]}'
         return 'feeder-co'
@@ -197,7 +201,7 @@ def extract_feed_info(feed, original_url):
             elif domain == 'feeder.co' or domain.endswith('.feeder.co'):
                 # Check for specific feeds
                 match = re.search(r'/discover/([^/]+)', original_url)
-                if match and match.group(1) == '769cf44983':
+                if match and match.group(1) == CIS_SECURITY_DISCOVERY_ID:
                     feed_title = 'CIS Security Threat Level'
                 else:
                     feed_title = 'Feeder Discovery Feed'

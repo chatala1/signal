@@ -566,49 +566,31 @@
                     const latestItem = cisFeed.items[0];
                     
                     if (threatLevelBox) {
-                        // Extract threat level from title or description
-                        let threatLevel = 'UNKNOWN';
-                        let ledClass = '';
+                        // Helper function to detect threat level from text
+                        const detectThreatLevel = (text) => {
+                            const upperText = (text || '').toUpperCase();
+                            if (/\bSEVERE\b/.test(upperText) || /\bRED\b/.test(upperText)) {
+                                return { level: 'SEVERE', ledClass: 'led-severe' };
+                            } else if (/\bHIGH\b/.test(upperText) || /\bORANGE\b/.test(upperText)) {
+                                return { level: 'HIGH', ledClass: 'led-high' };
+                            } else if (/\bELEVATED\b/.test(upperText) || /\bYELLOW\b/.test(upperText)) {
+                                return { level: 'ELEVATED', ledClass: 'led-elevated' };
+                            } else if (/\bGUARDED\b/.test(upperText) || /\bBLUE\b/.test(upperText)) {
+                                return { level: 'GUARDED', ledClass: 'led-guarded' };
+                            } else if (/\bLOW\b/.test(upperText) || /\bGREEN\b/.test(upperText)) {
+                                return { level: 'LOW', ledClass: 'led-low' };
+                            }
+                            return null;
+                        };
                         
-                        // Check title first, then description for threat level keywords
-                        const title = (latestItem.title || '').toUpperCase();
-                        const summary = (latestItem.summary || '').toUpperCase();
-                        
-                        // Priority order: Check title for exact word boundaries first
-                        // This ensures we match the correct level even if multiple levels are mentioned
-                        if (/\bSEVERE\b/.test(title) || /\bRED\b/.test(title)) {
-                            threatLevel = 'SEVERE';
-                            ledClass = 'led-severe';
-                        } else if (/\bHIGH\b/.test(title) || /\bORANGE\b/.test(title)) {
-                            threatLevel = 'HIGH';
-                            ledClass = 'led-high';
-                        } else if (/\bELEVATED\b/.test(title) || /\bYELLOW\b/.test(title)) {
-                            threatLevel = 'ELEVATED';
-                            ledClass = 'led-elevated';
-                        } else if (/\bGUARDED\b/.test(title) || /\bBLUE\b/.test(title)) {
-                            threatLevel = 'GUARDED';
-                            ledClass = 'led-guarded';
-                        } else if (/\bLOW\b/.test(title) || /\bGREEN\b/.test(title)) {
-                            threatLevel = 'LOW';
-                            ledClass = 'led-low';
-                        } 
-                        // If not found in title, check summary
-                        else if (/\bSEVERE\b/.test(summary) || /\bRED\b/.test(summary)) {
-                            threatLevel = 'SEVERE';
-                            ledClass = 'led-severe';
-                        } else if (/\bHIGH\b/.test(summary) || /\bORANGE\b/.test(summary)) {
-                            threatLevel = 'HIGH';
-                            ledClass = 'led-high';
-                        } else if (/\bELEVATED\b/.test(summary) || /\bYELLOW\b/.test(summary)) {
-                            threatLevel = 'ELEVATED';
-                            ledClass = 'led-elevated';
-                        } else if (/\bGUARDED\b/.test(summary) || /\bBLUE\b/.test(summary)) {
-                            threatLevel = 'GUARDED';
-                            ledClass = 'led-guarded';
-                        } else if (/\bLOW\b/.test(summary) || /\bGREEN\b/.test(summary)) {
-                            threatLevel = 'LOW';
-                            ledClass = 'led-low';
+                        // Check title first, then summary for threat level
+                        let result = detectThreatLevel(latestItem.title);
+                        if (!result) {
+                            result = detectThreatLevel(latestItem.summary);
                         }
+                        
+                        const threatLevel = result ? result.level : 'UNKNOWN';
+                        const ledClass = result ? result.ledClass : '';
                         
                         // Update title
                         const titleElement = threatLevelBox.querySelector('.top-container-title');
