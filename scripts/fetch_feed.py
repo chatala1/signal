@@ -247,13 +247,16 @@ def merge_feed_items(new_items, old_items, max_items=9):
     """
     Merge new items with old items to ensure we always have max_items.
     
+    Deduplication is based on the 'link' field. Items are ordered with new items
+    first, followed by old items that don't appear in the new items list.
+    
     Args:
         new_items: List of newly fetched items
         old_items: List of previously stored items
         max_items: Maximum number of items to keep (default 9)
     
     Returns:
-        List of items with new items first, followed by old items (deduplicated)
+        List of items with new items first, followed by old items (deduplicated by link)
     """
     # Create a set of links from new items for deduplication
     new_links = {item['link'] for item in new_items}
@@ -278,8 +281,12 @@ def load_existing_feed_data(output_path):
         if os.path.exists(output_path):
             with open(output_path, 'r', encoding='utf-8') as f:
                 return json.load(f)
+    except FileNotFoundError:
+        print(f"  Note: No existing feed data found at {output_path}")
+    except json.JSONDecodeError as e:
+        print(f"  Warning: Failed to parse existing feed data (invalid JSON): {e}")
     except Exception as e:
-        print(f"  Note: Could not load existing feed data: {e}")
+        print(f"  Warning: Could not load existing feed data: {e}")
     return None
 
 
