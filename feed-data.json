@@ -1,11 +1,29 @@
 {
-  "fetched_at": "2025-12-08T18:06:09.638109+00:00",
+  "fetched_at": "2025-12-09T06:05:47.847574+00:00",
   "feeds": [
     {
       "id": "therecord",
       "source": "The Record from Recorded Future News",
       "url": "https://therecord.media/feed/",
       "items": [
+        {
+          "title": "Trump plans executive order curbing state AI laws",
+          "link": "https://therecord.media/trump-plans-ai-exec-order-curbing-state-laws",
+          "published": "Mon, 08 Dec 2025 21:25:47 GMT",
+          "summary": "Legislators at both the state and federal level have increasingly scrutinized how AI models suck up data for training purposes."
+        },
+        {
+          "title": "More than $2 billion in payments from 4,000 ransomware incidents reported to Treasury in recent years",
+          "link": "https://therecord.media/fincen-treasury-2-billion-ransomware-payments-report",
+          "published": "Mon, 08 Dec 2025 21:15:53 GMT",
+          "summary": "The Treasury Department’s Financial Crimes Enforcement Network (FinCEN) released a study last week covering 4,194 ransomware incidents that were reported through the Bank Secrecy Act over the three-year period."
+        },
+        {
+          "title": "Meta proposal for less data sharing is approved by European Commission",
+          "link": "https://therecord.media/meta-less-data-sharing-european-commission",
+          "published": "Mon, 08 Dec 2025 20:01:45 GMT",
+          "summary": "Instagram and Facebook users in the EU will now have the option to share less personal data and see fewer personalized ads."
+        },
         {
           "title": "Russian kids revolt as Kremlin bans Roblox, other popular apps",
           "link": "https://therecord.media/russia-bans-roblox-drawing-criticism-from-kids",
@@ -17,24 +35,6 @@
           "link": "https://therecord.media/researchers-track-dozens-react2shell-vuln",
           "published": "Mon, 08 Dec 2025 16:30:12 GMT",
           "summary": "Researchers have confirmed more than 30 affected organizations tied to the React2Shell bug that emerged last week."
-        },
-        {
-          "title": "Three hacking groups, two vulnerabilities and all eyes on China",
-          "link": "https://therecord.media/three-hacking-groups-two-vulnerabilities-china-microsoft",
-          "published": "Mon, 08 Dec 2025 14:51:22 GMT",
-          "summary": "What does it mean that three separate China-linked groups all moved on the same SharePoint vulnerabilities at nearly the same time?"
-        },
-        {
-          "title": "Russian police bust bank-account hacking gang that used NFCGate-based malware",
-          "link": "https://therecord.media/russian-police-bust-banking-hackers-nfcgate-based-malware",
-          "published": "Mon, 08 Dec 2025 13:56:16 GMT",
-          "summary": "Russian police said they took down a multimillion-dollar cybercrime operation that used malware based on a legitimate software tool to take over individuals' bank accounts."
-        },
-        {
-          "title": "UK intelligence warns AI 'prompt injection' attacks might never go away",
-          "link": "https://therecord.media/prompt-injection-attacks-uk-intelligence-warning",
-          "published": "Mon, 08 Dec 2025 13:06:07 GMT",
-          "summary": "A top technologist at the U.K.’s National Cyber Security Centre said “there’s a good chance” that prompt injection attacks against AI will never be eliminated, and he warned of the related risks of embedding generative AI into digital systems globally."
         }
       ]
     }
