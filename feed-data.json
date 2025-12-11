@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-12-10T18:06:15.089091+00:00",
+  "fetched_at": "2025-12-11T06:05:59.521278+00:00",
   "feeds": [
     {
       "id": "therecord",
@@ -7,10 +7,28 @@
       "url": "https://therecord.media/feed/",
       "items": [
         {
+          "title": "Lawmaker calls facial recognition on doorbell cameras a ‘privacy nightmare’",
+          "link": "https://therecord.media/lawmaker-calls-facial-recognition-doorbell-cameras-privacy-nightmare",
+          "published": "Wed, 10 Dec 2025 20:59:59 GMT",
+          "summary": "Sen. Ed Markey (D-MA) asked Ring in October about its privacy policies and how it intends to protect individuals recorded by its new facial recognition technology feature called Familiar Faces."
+        },
+        {
+          "title": "DOJ, CISA warn of Russia-linked attacks targeting meat processing plants, nuclear regulatory entities and other critical infrastructure",
+          "link": "https://therecord.media/doj-cisa-warn-russia-hackers-targeting-critical-infrastructure",
+          "published": "Wed, 10 Dec 2025 19:58:16 GMT",
+          "summary": "The Cybersecurity and Infrastructure Security Agency (CISA), alongside several other U.S. and international agencies, released an advisory covering the cyberattacks launched by CyberArmyofRussia_Reborn (CARR), NoName057(16) and several related groups."
+        },
+        {
+          "title": "Flock cameras remained active in two cities where officials had asked for them to be turned off",
+          "link": "https://therecord.media/flock-safety-cameras-remained-active-after-cities-asked-turned-off",
+          "published": "Wed, 10 Dec 2025 19:47:02 GMT",
+          "summary": "Officials in Cambridge, Massachusetts, and Eugene, Oregon, found that some Flock Safety license plate readers were still active after the municipalities asked for services to be terminated."
+        },
+        {
           "title": "US extradites member of Russian hacktivist group involved in critical infrastructure attacks",
           "link": "https://therecord.media/us-extradites-member-of-russian-hacking-groups-critical-infrastructure",
           "published": "Wed, 10 Dec 2025 17:49:32 GMT",
-          "summary": "The Justice Department unveiled two indictments on Tuesday evening charging Victoria Eduardovna Dubranova for her role in CyberArmyofRussia_Reborn (CARR) and NoName057(16), two groups known for attacking critical infrastructure."
+          "summary": "The Justice Department unveiled two indictments on Tuesday evening charging Victoria Eduardovna Dubranova for her alleged roles in CyberArmyofRussia_Reborn (CARR) and NoName057(16), two groups known for attacking critical infrastructure."
         },
         {
           "title": "Teen who allegedly stole millions of personal data records arrested in Spain",
@@ -41,24 +59,6 @@
           "link": "https://therecord.media/california-man-pleads-guilty-rico-charges-crypto-theft",
           "published": "Tue, 09 Dec 2025 21:44:32 GMT",
           "summary": "Evan Tangeman became the ninth person to plead guilty as part of a wider Justice Department takedown of a criminal group known as the Social Engineering Enterprise."
-        },
-        {
-          "title": "Khashoggi widow files complaint in France alleging Saudi government infected devices with spyware",
-          "link": "https://therecord.media/khashoggi-widow-legal-complaint-filed-alleging-saudi-government-spyware",
-          "published": "Tue, 09 Dec 2025 16:44:48 GMT",
-          "summary": "A French judge will determine whether investigators should proceed with a complaint from the widow of slain writer Jamal Khashoggi alleging that Saudi Arabia deployed spyware on her devices before his killing."
-        },
-        {
-          "title": "Seoul cyber investigators seize data, devices from ‘South Korea’s Amazon’ following data breach",
-          "link": "https://therecord.media/seoul-cyber-investigators-seize-data-korea-tech-giant",
-          "published": "Tue, 09 Dec 2025 14:51:43 GMT",
-          "summary": "Cyber investigators from the Seoul Metropolitan Police Agency seized devices and data from one of the country's largest tech firms to find evidence uncovering how the breach took place."
-        },
-        {
-          "title": "Trump plans executive order curbing state AI laws",
-          "link": "https://therecord.media/trump-plans-ai-exec-order-curbing-state-laws",
-          "published": "Mon, 08 Dec 2025 21:25:47 GMT",
-          "summary": "Legislators at both the state and federal level have increasingly scrutinized how AI models suck up data for training purposes."
         }
       ]
     }
