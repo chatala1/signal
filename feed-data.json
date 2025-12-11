@@ -1,11 +1,41 @@
 {
-  "fetched_at": "2025-12-11T06:05:59.521278+00:00",
+  "fetched_at": "2025-12-11T18:05:04.134676+00:00",
   "feeds": [
     {
       "id": "therecord",
       "source": "The Record from Recorded Future News",
       "url": "https://therecord.media/feed/",
       "items": [
+        {
+          "title": "New 'DroidLock' malware demands a ransom, locks user out of device",
+          "link": "https://therecord.media/android-droidlock-malware-demands-ransom-locks-mobile-device",
+          "published": "Thu, 11 Dec 2025 17:21:38 GMT",
+          "summary": "Recently spotted malware targets Spanish-speaking Android users with a lock screen that demands a ransom and other changes that effectively render a device unusable, researchers say."
+        },
+        {
+          "title": "Federal agencies now only have one more day to patch React2Shell bug",
+          "link": "https://therecord.media/react4shell-vulnerability-cisa-shortens-patch-deadline",
+          "published": "Thu, 11 Dec 2025 16:11:32 GMT",
+          "summary": "Wide exploitation of the vulnerability known as React2Shell has prompted CISA to reduce the amount of time federal agencies have to patch the bug."
+        },
+        {
+          "title": "Hackers reportedly breach developer involved with Russia’s military draft database",
+          "link": "https://therecord.media/hackers-reportedly-breach-developer-involved-in-russian-military-database",
+          "published": "Thu, 11 Dec 2025 15:44:40 GMT",
+          "summary": "A hacking group it had maintained access to the firm's systems for several months and had destroyed parts of the company’s infrastructure."
+        },
+        {
+          "title": "Announced pick for No. 2 at NSA won’t get the job as another candidate surfaces",
+          "link": "https://therecord.media/announced-nsa-deputy-director-pick-joe-francescon-not-taking-job",
+          "published": "Thu, 11 Dec 2025 15:22:54 GMT",
+          "summary": "Joe Francescon, announced in August as the NSA's new deputy director, will not be filling the role, sources told Recorded Future News, and the Trump administration has another pick in mind."
+        },
+        {
+          "title": "UK fines LastPass £1.2 million for data breach affecting 1.6 million people",
+          "link": "https://therecord.media/uk-fines-lastpass-over-1-million-data-breach",
+          "published": "Thu, 11 Dec 2025 14:58:54 GMT",
+          "summary": "The Information Commissioner’s Office said LastPass had “failed to implement sufficiently robust technical and security measures” to protect its data."
+        },
         {
           "title": "Lawmaker calls facial recognition on doorbell cameras a ‘privacy nightmare’",
           "link": "https://therecord.media/lawmaker-calls-facial-recognition-doorbell-cameras-privacy-nightmare",
@@ -29,36 +59,6 @@
           "link": "https://therecord.media/us-extradites-member-of-russian-hacking-groups-critical-infrastructure",
           "published": "Wed, 10 Dec 2025 17:49:32 GMT",
           "summary": "The Justice Department unveiled two indictments on Tuesday evening charging Victoria Eduardovna Dubranova for her alleged roles in CyberArmyofRussia_Reborn (CARR) and NoName057(16), two groups known for attacking critical infrastructure."
-        },
-        {
-          "title": "Teen who allegedly stole millions of personal data records arrested in Spain",
-          "link": "https://therecord.media/spain-arrests-teen-suspect-data-theft-and-sale",
-          "published": "Wed, 10 Dec 2025 15:26:32 GMT",
-          "summary": "Spanish police accused a 19-year-old man of stealing 64 million personal data records from multiple companies and attempting to sell them on hacker forums."
-        },
-        {
-          "title": "Russia’s flagship airline hacked through little-known tech vendor, according to new report",
-          "link": "https://therecord.media/russia-flagship-airline-hacked-through-little-known-vendor",
-          "published": "Wed, 10 Dec 2025 15:13:28 GMT",
-          "summary": "The breach, which was claimed by the pro-Ukrainian hacker collective Silent Crow and the allied Belarusian Cyber-Partisans, paralyzed Aeroflot’s operations, grounding more than a hundred flights."
-        },
-        {
-          "title": "Senators return to effort to boost cybersecurity for commercial satellite industry",
-          "link": "https://therecord.media/commercial-satellite-industry-cybersecurity-cornyn-peters-bill-returns",
-          "published": "Wed, 10 Dec 2025 13:53:50 GMT",
-          "summary": "Sens. John Cornyn and Gary Peters are taking another crack at moving legislation meant to help commercial satellite providers defend their networks."
-        },
-        {
-          "title": "British government sanctions Russian and Chinese groups over information warfare",
-          "link": "https://therecord.media/uk-sanctions-russia-china-entities-information-warfare",
-          "published": "Wed, 10 Dec 2025 12:54:16 GMT",
-          "summary": "The U.K.'s foreign secretary announced sanctions on seven Russian individuals and influence networks, as well as the Chinese companies i-Soon and Integrity Technology Group."
-        },
-        {
-          "title": "California man pleads guilty to RICO charges as DOJ indicts crypto theft gang",
-          "link": "https://therecord.media/california-man-pleads-guilty-rico-charges-crypto-theft",
-          "published": "Tue, 09 Dec 2025 21:44:32 GMT",
-          "summary": "Evan Tangeman became the ninth person to plead guilty as part of a wider Justice Department takedown of a criminal group known as the Social Engineering Enterprise."
         }
       ]
     }
