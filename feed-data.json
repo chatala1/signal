@@ -1,5 +1,5 @@
 {
-  "fetched_at": "2025-12-11T18:05:04.134676+00:00",
+  "fetched_at": "2025-12-12T06:05:52.653580+00:00",
   "feeds": [
     {
       "id": "therecord",
@@ -14,7 +14,7 @@
         },
         {
           "title": "Federal agencies now only have one more day to patch React2Shell bug",
-          "link": "https://therecord.media/react4shell-vulnerability-cisa-shortens-patch-deadline",
+          "link": "https://therecord.media/react2shell-vulnerability-cisa-shortens-patch-deadline",
           "published": "Thu, 11 Dec 2025 16:11:32 GMT",
           "summary": "Wide exploitation of the vulnerability known as React2Shell has prompted CISA to reduce the amount of time federal agencies have to patch the bug."
         },
@@ -37,6 +37,12 @@
           "summary": "The Information Commissioner’s Office said LastPass had “failed to implement sufficiently robust technical and security measures” to protect its data."
         },
         {
+          "title": "Federal agencies now only have one more day to patch React2Shell bug",
+          "link": "https://therecord.media/react4shell-vulnerability-cisa-shortens-patch-deadline",
+          "published": "Thu, 11 Dec 2025 16:11:32 GMT",
+          "summary": "Wide exploitation of the vulnerability known as React2Shell has prompted CISA to reduce the amount of time federal agencies have to patch the bug."
+        },
+        {
           "title": "Lawmaker calls facial recognition on doorbell cameras a ‘privacy nightmare’",
           "link": "https://therecord.media/lawmaker-calls-facial-recognition-doorbell-cameras-privacy-nightmare",
           "published": "Wed, 10 Dec 2025 20:59:59 GMT",
@@ -53,12 +59,6 @@
           "link": "https://therecord.media/flock-safety-cameras-remained-active-after-cities-asked-turned-off",
           "published": "Wed, 10 Dec 2025 19:47:02 GMT",
           "summary": "Officials in Cambridge, Massachusetts, and Eugene, Oregon, found that some Flock Safety license plate readers were still active after the municipalities asked for services to be terminated."
-        },
-        {
-          "title": "US extradites member of Russian hacktivist group involved in critical infrastructure attacks",
-          "link": "https://therecord.media/us-extradites-member-of-russian-hacking-groups-critical-infrastructure",
-          "published": "Wed, 10 Dec 2025 17:49:32 GMT",
-          "summary": "The Justice Department unveiled two indictments on Tuesday evening charging Victoria Eduardovna Dubranova for her alleged roles in CyberArmyofRussia_Reborn (CARR) and NoName057(16), two groups known for attacking critical infrastructure."
         }
       ]
     }
